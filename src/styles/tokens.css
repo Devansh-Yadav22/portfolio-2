@@ -1,0 +1,23 @@
+:root {
+  --ink: #06080C;
+  --ink-2: #0D1117;
+  --line: #1B2430;
+  --bone: #E9E5DD;
+  --mute: #7B8794;
+  --honey: #FFB23E;
+  --honey-deep: #B86E10;
+
+  /* Typography */
+  --font-serif: 'Fraunces', Garamond, 'Times New Roman', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', Menlo, Monaco, Consolas, monospace;
+
+  /* Motion Easings per Section 6 */
+  --ease-primary: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-secondary: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Durations */
+  --duration-micro: 200ms;
+  --duration-state: 400ms;
+  --duration-structural: 900ms;
+  --duration-camera: 1800ms;
+}

@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-line: var(--line);
+  --color-bone: var(--bone);
+  --color-mute: var(--mute);
+  --color-honey: var(--honey);
+  --color-honey-deep: var(--honey-deep);
+
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--ink);
+  color: var(--bone);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Typography styles */
+.font-serif-display {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' 96, 'SOFT' 0;
+}
+
+.font-serif-body {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' 18, 'SOFT' 20;
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+  font-feature-settings: "zero" 1;
+}
+
+/* Hard constraint: 2px radius or none */
+button, input, textarea, .panel-card {
+  border-radius: 2px;
+}
+
+/* Focus indicator per brief */
+:focus-visible {
+  outline: 2px solid var(--honey);
+  outline-offset: 2px;
+}
+
+/* Measure under 68ch per brief */
+.prose-measure {
+  max-width: 68ch;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--honey-deep);
+}
+
+/* Selection style */
+::selection {
+  background: rgba(255, 178, 62, 0.22);
+  color: var(--honey);
+}
+
+/* Canvas styling */
+canvas.webgl-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* Reduced motion honoring */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
